@@ -22,6 +22,6 @@ resp.raise_for_status()
 token = resp.json()["access_token"]
 
 # 2. Store into secret scope
-w.secrets.put_secret(scope="my-oauth-secrets", key="pgpassword", string_value=token)
+w.secrets.put_secret(scope="oauth-secrets", key="pgpassword", string_value=token)
 
 print("✅ Refreshed pgpassword and stored in Databricks Secrets")
